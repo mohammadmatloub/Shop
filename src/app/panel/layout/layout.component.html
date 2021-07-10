@@ -1,0 +1,24 @@
+<p-toolbar>
+  <div class="p-toolbar-group-right">
+    <p-button
+      type="text"
+      (click)="display = true"
+      icon="pi pi-home"
+      routerLink="/home"
+    ></p-button>
+  </div>
+  <div class="p-toolbar-group-left">
+    <p-button type="text" (click)="display = true" icon="pi pi-bars"></p-button>
+  </div>
+</p-toolbar>
+
+
+<div class="layout-wrapper">
+  <div class="forms-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="side-menu-wrapper">
+    <p-panelMenu [model]="items" [multiple]="false"></p-panelMenu>
+  </div>
+</div>

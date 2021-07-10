@@ -1,0 +1,81 @@
+<div style="position: relative; bottom: 0">
+  <p-toolbar
+    ><div class="p-d-flex">
+      <button
+        pButton
+        type="button"
+        label="ذخیره"
+        class="p-button-success"
+        (click)="doSave()"
+      ></button>
+    </div>
+  </p-toolbar>
+</div>
+
+<div class="form">
+  <div class="ui-rtl" dir="rtl">
+    <p-fieldset>
+      <ng-template pTemplate="header">مشخصات کالا</ng-template>
+
+      <div class="p-field p-grid">
+        <label for="stuffName" class="p-col-fixed" style="width: 200px"
+          >عنوان کالا</label
+        >
+        <div class="p-col">
+          <input
+            id="stuffName"
+            type="text"
+            pInputText
+            [(ngModel)]="entity.stuffName"
+          />
+        </div>
+      </div>
+
+      <div class="p-field p-grid">
+        <label for="inventory" class="p-col-fixed" style="width: 200px"
+          >موجودی در انبار</label
+        >
+        <div class="p-col">
+          <p-inputNumber
+            mode="decimal"
+            inputId="inventory"
+            [useGrouping]="false"
+            [(ngModel)]="entity.inventory"
+          >
+          </p-inputNumber>
+        </div>
+      </div>
+
+      <div class="p-field p-grid">
+        <label for="description" class="p-col-fixed" style="width: 200px">
+          توضیحات</label
+        >
+        <div class="p-col">
+          <textarea
+            [rows]="5"
+            [cols]="70"
+            pInputTextarea
+            [autoResize]="true"
+            [(ngModel)]="entity.description"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="p-field p-grid">
+        <label for="uploadPic" class="p-col-fixed" style="width: 200px">
+          آپلود عکس</label
+        >
+        <div class="p-col">
+          <p-fileUpload
+            name="myfile[]"
+            url="./upload.php"
+            [multiple]="true"
+            accept="image/*"
+            [auto]="true"
+          ></p-fileUpload>
+        </div>
+      </div>
+    </p-fieldset>
+  </div>
+</div>
+<p-toast position="top-right"></p-toast>
